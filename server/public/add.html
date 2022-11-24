@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+    <title>Add</title>
+</head>
+<body>
+    <h2>Add Game</h2>
+    <form action="/" method="post">
+        <div>  
+            <label for="Game"> Game Name: </label>
+        </div>
+        <div >    
+            <input id="Game" type="text" name="Game" required>
+        </div>
+        <div>
+            <label for="Gamelink"> Gamelink: </label>
+        </div>
+        <div >  
+            <input id="Gamelink" type="text" name="Gamelink" required>
+        </div>
+        <div>
+            <label for="Description"> GAME DESCRIPTION: </label>
+        </div>
+        <div >  
+            <textarea id="Description" name="Description" required ></textarea>
+        </div>
+        
+        <div>
+            <label for="Instructions"> Instructions: </label>
+        </div>
+        <div >  
+            <textarea id="Instructions" name="Instructions" required class="txtarea"></textarea>
+        </div>
+        
+        <input type="submit" value="Submit" class="submit">
+    </form>
+</body>
+</html>

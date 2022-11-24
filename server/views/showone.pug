@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+head
+    title #{info.Game}
+    link(rel='stylesheet', href='/stylesheets/style.css')
+body
+    nav
+        li #[a(href='/') Main Page]
+        li #[a(href='update/'+`${info._id}`) Edit]
+        li #[a(href='delete/'+`${info._id}`) Delete]
+    div(class='descri')
+        h2 #{info.Game}
+        li Gamelink: #{info.Gamelink}
+        li Description: #{info.Description}
+        li Instructions: #{info.Instructions}
