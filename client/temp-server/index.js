@@ -12,7 +12,7 @@ app.get("/getapps", async (req, res) => {
     let appList = await axios.get('http://api.steampowered.com/ISteamApps/GetAppList/v0002/?key=STEAMKEY&format=json');
     console.log(appList.data);
     
-    let rd=Math.random() * 1000
+    let rd=Math.random() * 10000
     let list = await Promise.all(
       appList.data.applist.apps.slice(rd, rd+20).map(async ({ appid }) => {
         let { data } = await axios.get(
