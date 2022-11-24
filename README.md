@@ -1,7 +1,7 @@
-Arghavan Ayoughi   iteration1\  
+Arghavan Ayoughi   iteration1  
 Meixuan Chen       MC\
 Xiaoyang Zhao      kayan9896\
-We did not merge to the main branch.
+We did not merge our branches to the main and we deployed the client and the server separately. We can achieve CRUD for games editing on the server side and the users do not have access to this. We will also add CRUD on the client side for posting comments after we finish the users and login pages.
 
 # webfinal
 ![Untitled document (1)-1](https://user-images.githubusercontent.com/90473306/201506672-331fb95e-ee0b-4353-80cb-e1f15cea4b05.png)
