@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 const cors = require("cors");
+var user = require('./model/user');
 
 
 // view engine setup
