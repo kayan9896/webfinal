@@ -41,4 +41,57 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+//register
+app.use("/", (req, res, next) => {
+	try {
+	  if (req.path == "/login" || req.path == "/register" || req.path == "/") {
+		next();
+	  } else {
+		/* decode jwt token if authorized*/
+		jwt.verify(req.headers.token, 'test1', function (err, decoded) {
+		  if (decoded && decoded.user) {
+			req.user = decoded;
+			next();
+		  } else {
+			return res.status(401).json({
+			  errorMessage: 'User unauthorized!',
+			  status: false
+			});
+		  }
+		})
+	  }
+	} catch (e) {
+	  res.status(400).json({
+		errorMessage: 'Something went wrong!',
+		status: false
+	  });
+	}
+  })
+
+  //login
+  app.use("/", (req, res, next) => {
+	try {
+	  if (req.path == "/login" || req.path == "/register" || req.path == "/") {
+		next();
+	  } else {
+		/* decode jwt token if authorized*/
+		jwt.verify(req.headers.token, 'test1', function (err, decoded) {
+		  if (decoded && decoded.user) {
+			req.user = decoded;
+			next();
+		  } else {
+			return res.status(401).json({
+			  errorMessage: 'User unauthorized!',
+			  status: false
+			});
+		  }
+		})
+	  }
+	} catch (e) {
+	  res.status(400).json({
+		errorMessage: 'Something went wrong!',
+		status: false
+	  });
+	}
+  })
 module.exports = app;
