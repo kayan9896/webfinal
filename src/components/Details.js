@@ -8,7 +8,9 @@ export default function Details() {
   const [gameDetails, setGameDetails] = useState({});
   useEffect(() => {
     async function getGameDetails() {
-      let { data } = await axios.get(`http://localhost:3005/game/${sid}`);
+      let { data } = await axios.get(
+        `https://gamewebsite.onrender.com/game/${sid}`
+      );
       console.log(data);
       if (data.ok) setGameDetails(data.details);
     }
@@ -90,10 +92,16 @@ export default function Details() {
                 case "screenshots":
                   return (
                     <tr>
-                      <td>Screenshots</td>
-                      <td>
+                      <td style={{ borderBottomLeftRadius: 20 }}>
+                        Screenshots
+                      </td>
+                      <td style={{ borderBottomRightRadius: 20 }}>
                         {gameDetails[key].map(({ path_thumbnail }) => (
-                          <embed src={path_thumbnail} width={"20%"} style={{paddingRight:10}} />
+                          <embed
+                            src={path_thumbnail}
+                            width={"20%"}
+                            style={{ paddingRight: 10 }}
+                          />
                         ))}
                       </td>
                     </tr>
@@ -102,8 +110,15 @@ export default function Details() {
                 default:
                   return (
                     <tr>
-                      <td>{key.replace("_", " ")}</td>
                       <td
+                        style={{ borderTopLeftRadius: key === "name" ? 20 : 0 }}
+                      >
+                        {key.replace("_", " ")}
+                      </td>
+                      <td
+                        style={{
+                          borderTopRightRadius: key === "name" ? 20 : 0,
+                        }}
                         dangerouslySetInnerHTML={{ __html: gameDetails[key] }}
                       />
                     </tr>
