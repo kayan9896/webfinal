@@ -105,8 +105,7 @@ export default function Details() {
                         ))}
                       </td>
                     </tr>
-                  );
-
+                  );  
                 default:
                   return (
                     <tr>

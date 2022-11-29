@@ -7,6 +7,7 @@ export default function Header(props) {
       <h1>Game Library</h1>
       <Link to={'/'}>Home</Link>
       <Link to={'/mini'}>Mini Games</Link>
+	  
     </header>
   );
 }
