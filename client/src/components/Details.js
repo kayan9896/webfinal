@@ -105,7 +105,7 @@ export default function Details() {
                         ))}
                       </td>
                     </tr>
-                  );  
+                  ); 
                 default:
                   return (
                     <tr>
@@ -123,10 +123,12 @@ export default function Details() {
                     </tr>
                   );
               }
+			  
             })}
           </tbody>
         </table>
       </div>
+
     </div>
   );
 }

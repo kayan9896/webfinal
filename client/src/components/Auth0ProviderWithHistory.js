@@ -15,8 +15,8 @@ export default function Auth0ProviderWithHistory({ children }) {
       domain={process.env.REACT_APP_AUTH0_DOMAIN}
       clientId={process.env.REACT_APP_AUTH0_CLIENTID}
       redirectUri={window.location.origin}
-    //   onRedirectCallback={redirect}
-    //   audience={process.env.REACT_APP_AUTH0_AUDIENCE}
+      onRedirectCallback={redirect}
+      audience={process.env.REACT_APP_AUTH0_AUDIENCE}
     >
       {children}
     </Auth0Provider>

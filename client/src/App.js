@@ -10,6 +10,7 @@ import Register from "./components/Register";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
+import Profile from "./components/Profile";
 
 function App() {
   const { isAuthenticated, isLoading } = useAuth0();
@@ -64,6 +65,7 @@ function App() {
         {/* <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} /> */}
         <Route path="*" element={<p>Nothing to match this path. </p>} />
+		<Route path="/profile" element={Profile}/>
 		
       </Routes>
     </div>
