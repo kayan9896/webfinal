@@ -54,7 +54,7 @@ body {
   border-bottom: 1px solid red;
   padding-bottom: 10px;
 }
-embed{
+embed {
   overflow: hidden;
 }
 
@@ -97,4 +97,38 @@ embed{
 }
 .details__table tr td:last-child {
   padding-left: 20px;
+}
+
+.commentArea {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  align-items: start;
+  width: 90%;
+  margin-bottom: 100px;
+}
+
+.commentArea textarea {
+  font-family: "Open Sans";
+  padding: 10px;
+  /* padding-bottom: 20px; */
+}
+
+.commentArea_userComment {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #ccc;
+width: 100%;
+margin-bottom: 50px;
+}
+.commentArea_userComment p {
+  text-align: justify;
+}
+
+#authButton {
+  all: unset;
+  cursor: pointer;
+  color: rgb(216, 85, 62);
+  font-weight: 600;
 }

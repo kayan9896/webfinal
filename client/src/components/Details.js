@@ -1,21 +1,100 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import TextField from "@mui/material/TextField";
+import TextareaAutosize from "@mui/material/TextareaAutosize";
+import LoadingButton from "@mui/lab/LoadingButton";
+import { useAuth0 } from "@auth0/auth0-react";
+
 // import ReactHtmlParser from "react-html-parser";
 export default function Details() {
-  console.log(useParams());
+  const { isAuthenticated, user } = useAuth0();
+  // console.log(user);
+  // console.log(useParams());
   const { sid } = useParams();
   const [gameDetails, setGameDetails] = useState({});
+
+  const [commentText, setCommentText] = useState("");
+  const [commentTextEdit, setCommentTextEdit] = useState("");
+
+  const [submitButtonStatus, SetSubmitButtonStatus] = useState(false);
+  const [submitEditButtonStatus, SetSubmitEditButtonStatus] = useState(false);
+
+  const [commentData, setCommentData] = useState([]);
+  const [onEditCommentId, setOnEditId] = useState(0);
+  async function getComments() {
+    let commentData = await axios.get(
+      `http://localhost:3005/users/comments/${sid}`
+    );
+    // console.log(commentData.data)
+    setCommentData(commentData.data);
+  }
   useEffect(() => {
     async function getGameDetails() {
       let { data } = await axios.get(
         `https://gamewebsite.onrender.com/game/${sid}`
       );
-      console.log(data);
+      // console.log(data);
       if (data.ok) setGameDetails(data.details);
     }
+
     getGameDetails();
+    getComments();
   }, [sid]);
+
+  async function submitCommentHandler() {
+    if (!commentText.length) {
+      return alert("Fill the text area first!");
+    }
+    SetSubmitButtonStatus(true);
+    let { data } = await axios.post("http://localhost:3005/users/new", {
+      userId: user.sub,
+      Comment: commentText,
+      gameId: sid,
+      nickname: user.nickname,
+    });
+    if (data.ok) {
+      getComments();
+      setCommentText("");
+      alert("Thanks for your comment!");
+    } else alert("error");
+    SetSubmitButtonStatus(false);
+  }
+
+  async function submitEditedComment() {
+    SetSubmitEditButtonStatus(true);
+    let { data } = await axios.post(
+      `http://localhost:3005/users/update/${onEditCommentId}`,
+      {
+        Comment: commentTextEdit,
+        userId: user.sub,
+      }
+    );
+    if (data.ok) {
+      setOnEditId(null);
+      setCommentTextEdit(null);
+      getComments();
+      alert("Your comment has been successfully edited!");
+    } else alert("error");
+    SetSubmitEditButtonStatus(false);
+  }
+
+  async function deleteCommentHandler(cId) {
+    let confirmation = window.confirm(
+      "Are you sure you want to delete this comment?"
+    );
+    if (confirmation) {
+      let { data } = await axios.delete(
+        `http://localhost:3005/users/comments/delete/${cId}`
+      );
+
+      if (data.ok) {
+        getComments();
+        alert("Comment Deleted!");
+      }
+    }
+  }
+
   return (
     <div>
       <div className="details__area">
@@ -105,7 +184,7 @@ export default function Details() {
                         ))}
                       </td>
                     </tr>
-                  ); 
+                  );
                 default:
                   return (
                     <tr>
@@ -123,12 +202,109 @@ export default function Details() {
                     </tr>
                   );
               }
-			  
             })}
           </tbody>
         </table>
       </div>
-
+      <div className="commentArea">
+        {/* <TextField id="filled-basic" label="Filled" variant="filled" /> */}
+        <h2>Comments:</h2>
+        {commentData.length ? (
+          commentData.map((cm) => {
+            return (
+              <div className="commentArea_userComment">
+                <div>
+                  by <i>{cm.nickname}</i>
+                  {isAuthenticated && user.sub === cm.userId && (
+                    <div>
+                      <span
+                        style={{
+                          marginRight: 20,
+                          color: "#ff6d6d",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => {
+                          deleteCommentHandler(cm.commentId);
+                        }}
+                      >
+                        Delete
+                      </span>
+                      <span
+                        style={{
+                          color: "rgb(130, 164, 244)",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => {
+                          if (onEditCommentId === cm.commentId)
+                            return setOnEditId(null);
+                          setOnEditId(cm.commentId);
+                          setCommentTextEdit(cm.Comment);
+                        }}
+                      >
+                        Edit
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <span>
+                  posted at: {new Date(cm.createDate).toLocaleString()}
+                </span>
+                {onEditCommentId === cm.commentId ? (
+                  <>
+                    <TextareaAutosize
+                      aria-label="minimum height"
+                      minRows={10}
+                      placeholder="Write your comment..."
+                      style={{ width: "50%" }}
+                      className="commentArea_TextArea"
+                      value={commentTextEdit}
+                      onChange={(e) => setCommentTextEdit(e.target.value)}
+                    />
+                    <LoadingButton
+                      size="large"
+                      onClick={submitEditedComment}
+                      loading={submitEditButtonStatus}
+                      variant="outlined"
+                      style={{ marginTop: 20, width: 200, marginBottom: 40 }}
+                    >
+                      Submit Edit
+                    </LoadingButton>
+                  </>
+                ) : (
+                  <p>{cm.Comment}</p>
+                )}
+              </div>
+            );
+          })
+        ) : (
+          <p>There is no comment</p>
+        )}
+        {isAuthenticated ? (
+          <React.Fragment>
+            <h3>Post your comment</h3>
+            <TextareaAutosize
+              aria-label="minimum height"
+              minRows={10}
+              placeholder="Write your comment..."
+              style={{ width: "50%" }}
+              className="commentArea_TextArea"
+              value={commentText}
+              onChange={(e) => setCommentText(e.target.value)}
+            />
+            <LoadingButton
+              size="large"
+              onClick={submitCommentHandler}
+              loading={submitButtonStatus}
+              variant="outlined"
+              style={{ marginTop: 20, width: 200 }}
+            >
+              Submit
+            </LoadingButton>
+          </React.Fragment>
+        ) : (
+          <h4>Login First to post a comment</h4>
+        )}
+      </div>
     </div>
   );
 }

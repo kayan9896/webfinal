@@ -20,7 +20,7 @@ export default function Home() {
       try {
         setLoading(true);
         let { data } = await axios.get(
-          "https://gamewebsite.onrender.com/getapps"
+          "http://localhost:3005/getapps"
         );
         if (data.ok) {
           setAppList(data.list);
