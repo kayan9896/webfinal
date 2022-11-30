@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+head
+    title Update #{info.Game}
+body  
+    h2 Update
+    form(method='POST' action=`${info._id}`)
+      div.form-group
+        label(for='Game') Game::
+      div
+        input#puginput.form-control(type='text', placeholder='Game' name='Game' required='true' value=`${info.Game}` style='width:100%')
+      div.form-group
+        label(for='Gamelink') Gamelink:
+      div
+        input#puginput.form-control(type='text', placeholder='Gamelink' name='Gamelink' required='true' value=`${info.Gamelink}` style='width:100%')
+      div.form-group
+        label(for='Description') Description:
+      div
+        textarea#txtarea.form-control(type='textarea', placeholder='Description' name='Description' required='true' style='width:100%; height:200px') #{info.Description}
+      div.form-group
+        label(for='Instructions') Instructions:
+      div
+        textarea#txtarea.form-control(type='textarea', placeholder='Instructions' name='Instructions' required='true' style='width:100%; height:200px') #{info.Instructions}
+      
+      input(type='submit', value='Submit')

@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+head
+    title= "Server"
+    link(rel='stylesheet', href='/stylesheets/style.css')
+body
+  h1 Mini Games  
+  nav
+    a(href='../add.html') Add   
+    a(href='api/listall')  List  All  In  Json
+  main
+    for item in results
+      div
+        a(href='/api/'+`${item._id}`)
+          h3 #{item.Game}
+          
+  footer
+    small &copy; Copyright 2022, Corporation
+        
+        

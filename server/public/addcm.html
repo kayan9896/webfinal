@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+    <title>Add</title>
+</head>
+<body>
+    <h2>Add Cm</h2>
+    <form action="/users" method="post">
+        <div>  
+            <label for="GameId"> GameId: </label>
+        </div>
+        <div >    
+            <input id="GameId" type="text" name="GameId" required>
+        </div>
+        
+        <div>
+            <label for="Comment"> Comment: </label>
+        </div>
+        <div >  
+            <textarea id="Comment" name="Comment" required ></textarea>
+        </div>
+        
+        
+        
+        <input type="submit" value="Submit" class="submit">
+    </form>
+</body>
+</html>
