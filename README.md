@@ -1,6 +1,7 @@
-Arghavan Ayoughi branch iteration1  client part <br />
-Meixuan Chen  branch MC    user part <br />
-Xiaoyang Zhao branch kayan9896&test2    server part <br />
+Arghavan Ayoughi - branch iteration1  client part <br />
+Meixuan Chen  - branch MC    user part <br />
+Xiaoyang Zhao - branch kayan9896&test2    server part <br />
+We merge all into the main branch.<br/ >
 
 After the iteration2, we have finished most functions of the website.
 Arghavan Ayoughi made most contribution to the client part, including home page, game detail page, comments section inside the detail page and so on.
