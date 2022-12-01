@@ -56,11 +56,16 @@ function App() {
             </>
           }
         />
+		<Route path="/profile" element={
+			 <>
+			 <Header />
+			 <Profile />
+		   </>
+		}
+		/>
         {/* <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} /> */}
-        <Route path="*" element={<p>Nothing to match this path. </p>} />
-		<Route path="/profile" element={Profile}/>
-		
+        <Route path="*" element={<p>Nothing to match this path. </p>} />	
       </Routes>
     </div>
   );
