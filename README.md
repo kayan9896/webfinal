@@ -1,6 +1,6 @@
 Arghavan Ayoughi iteration1  client part <br />
 Meixuan Chen  MC    user part <br />
-Xiaoyang Zhao kayan9896&test2\    server part <br />
+Xiaoyang Zhao kayan9896&test2    server part <br />
 
 After the iteration2, we have finished most functions of the website.
 Arghavan Ayoughi made most contribution to the client part, including home page, game detail page, comments section inside the detail page and so on.
@@ -20,17 +20,22 @@ And we also have a search bar, a mini game page with the detail page fetching da
 <img width="960" alt="mini" src="https://user-images.githubusercontent.com/90473306/205113995-a07eb9c1-0aab-4d90-b82f-df5f461ada6a.png">
 <img width="556" alt="minidetail" src="https://user-images.githubusercontent.com/90473306/205114042-f46fc6a7-77b2-410b-ae02-7482d55d7dcf.png">
 <br />
-Meixuan completed the log in and user profile. <br />
+
+Meixuan Chen completed the log in and user profile. <br />
 <img width="546" alt="login" src="https://user-images.githubusercontent.com/90473306/205114260-e781c412-f021-4c71-8975-9c9e3771c472.png">
 <img width="468" alt="profile" src="https://user-images.githubusercontent.com/90473306/205114285-21fe3c09-d027-4b63-b5b7-fb4b0d9c6f6b.png">
 <br />
-And we also have a server part.
-Xiaoyang Zhao set up the server, chieved the CRUD functions mongodb and connected the server with React. <br />
+
+And we also have a server part.<br />
+Xiaoyang Zhao set up the server, implemented the CRUD functions for mongodb and connected the server with React. <br />
 <img width="307" alt="server" src="https://user-images.githubusercontent.com/90473306/205114805-7aac6b2a-5f7e-4a22-9684-73c67eceeb48.png">
 <img width="500" alt="listall" src="https://user-images.githubusercontent.com/90473306/205114880-342a09ce-39fa-469f-9669-1b4772ccbb77.png">
 <br />
+
 Arghavan Ayoughi handled the data from steam api and user comments for the server. <br />
 <img width="514" alt="getapp" src="https://user-images.githubusercontent.com/90473306/205115516-2e8fbd78-d123-4798-993d-2a4e1a4936c3.png">
 <br />
-Finally, we deployed the server and the client separately on render. Xiaoyang Zhao is responsible for the deployment. <br />
+
+Finally, we deployed the server and the client separately on render. <br />
+Xiaoyang Zhao is responsible for the deployment. <br />
 <img width="932" alt="deploy" src="https://user-images.githubusercontent.com/90473306/205115966-baeab604-afdb-41d1-b83d-a435d634f7a6.png">
