@@ -20,13 +20,13 @@ export default function Home() {
       try {
         setLoading(true);
         let { data } = await axios.get(
-          "http://localhost:3005/getapps"
+          "https://gamewebsite.onrender.com/getapps"
         );
         if (data.ok) {
           setAppList(data.list);
           setLoading(false);
         }
-        // console.log(data);
+        console.log(data);
       } catch (error) {
         console.log(error);
       }
