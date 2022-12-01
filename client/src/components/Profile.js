@@ -2,7 +2,7 @@
 import React from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from 'axios';
-
+import UserComments from './UserComments';
 
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
@@ -11,7 +11,12 @@ const Profile = () => {
 	<div><h1>Oops, please Login First</h1></div>)		
   }
 
-  const userComments = axios.get(`http://localhost:3005/users/comments/${user.sub}`);
+//   async function getUserCmt() {
+//     const cmt = await axios.get(`http://localhost:3005/users/comments/${user.sub}`)
+//     return cmt.data
+// }
+// 	const UserComments = getUserCmt();
+
 	return (
 		( 
 		<div>
@@ -19,10 +24,8 @@ const Profile = () => {
 			<h2>{user.name}</h2>
 			<p>{user.email}</p>
 			<div className="comment-list">
-				<div >
-					Your Reviews:
-				</div>
-				<userComments/>
+				<h3>Your Reviews:</h3>
+				<UserComments/>
 			</div>
 		</div>
 
