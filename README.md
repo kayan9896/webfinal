@@ -1,6 +1,6 @@
-Arghavan Ayoughi iteration1  client part <br />
-Meixuan Chen  MC    user part <br />
-Xiaoyang Zhao kayan9896&test2    server part <br />
+Arghavan Ayoughi branch iteration1  client part <br />
+Meixuan Chen  branch MC    user part <br />
+Xiaoyang Zhao branch kayan9896&test2    server part <br />
 
 After the iteration2, we have finished most functions of the website.
 Arghavan Ayoughi made most contribution to the client part, including home page, game detail page, comments section inside the detail page and so on.
@@ -15,7 +15,8 @@ When we click the game, we can see the game information page. <br />
 At the end of the game information, we allow log-in users to add, edit and delete their comments. <br />
 <img width="694" alt="comments" src="https://user-images.githubusercontent.com/90473306/205112007-7e9fb3e8-4ff7-499b-9920-2a177a19b0e0.png">
 
-And we also have a search bar, a mini game page with the detail page fetching data from our database. Xiaoyang Zhao contributed to these functions. <br />
+And we also have a search bar, a mini game page with the detail page fetching data from our database in the client.<be />
+Xiaoyang Zhao contributed to these functions. <br />
 <img width="859" alt="serchbar" src="https://user-images.githubusercontent.com/90473306/205113950-5c08f765-8bff-4858-b421-28e52ade2a1b.png">
 <img width="960" alt="mini" src="https://user-images.githubusercontent.com/90473306/205113995-a07eb9c1-0aab-4d90-b82f-df5f461ada6a.png">
 <img width="556" alt="minidetail" src="https://user-images.githubusercontent.com/90473306/205114042-f46fc6a7-77b2-410b-ae02-7482d55d7dcf.png">
