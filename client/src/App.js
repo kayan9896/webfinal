@@ -4,9 +4,7 @@ import Details from "./components/Details";
 import Header from "./components/Header";
 import Mini from "./components/Mini";
 import Home from "./components/Home";
-import MiniDetails from "./components/MiniDetails";
-
- 
+import MiniDetails from "./components/MiniDetails"; 
 import Profile from "./components/Profile";
 
 function App() {
@@ -56,10 +54,9 @@ function App() {
             </>
           }
         />
-        {/* <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} /> */}
+        <Route path="/profile" element={<Profile/>}/>
         <Route path="*" element={<p>Nothing to match this path. </p>} />
-		<Route path="/profile" element={Profile}/>
+		
 		
       </Routes>
     </div>
