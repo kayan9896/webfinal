@@ -105,7 +105,7 @@ router.get("/getapps", async (req, res) => {
 // appList
     //let rd=Math.random() * 100000
     let list = await Promise.all(
-      appList.data.applist.apps.slice(100, 110).map(async ({ appid }) => {
+      appList.data.applist.apps.slice(10000, 10022).map(async ({ appid }) => {
         let { data } = await axios.get(
           `https://store.steampowered.com/api/appdetails?appids=${appid}`
         );

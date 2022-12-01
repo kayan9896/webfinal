@@ -68,7 +68,7 @@ export default function Mini() {
                 let filter = searchParams.get("filter");
                 if (!filter) return true;
                 let name = i.Game.toLowerCase();
-                return name.startsWith(filter.toLowerCase());
+                return name.includes(filter.toLowerCase());
               })
               .map((i) => {
                 return (

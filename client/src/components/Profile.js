@@ -4,8 +4,14 @@ import { useAuth0 } from "@auth0/auth0-react";
 import JSONPretty from 'react-json-pretty';
 
 const Profile = () => {
-  const { user, isAuthenticated } = useAuth0();
-
+  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { loginWithRedirect } = useAuth0();
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
+  if (!isAuthenticated){
+    loginWithRedirect()
+  }
   return (
     isAuthenticated && ( 
      <div>
@@ -18,4 +24,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default Profile;
