@@ -1,7 +1,7 @@
 We first work on different branches:
-Arghavan Ayoughi iteration1  
-Meixuan Chen MC\
-Xiaoyang Zhao kayan9896\
+Arghavan Ayoughi iteration1  client part
+Meixuan Chen MC\    user part
+Xiaoyang Zhao kayan9896\    server part
 
 Then we connect backend and frontend in branch iteration1 and make updates for iteration2 in branch iteration1
 then we merge iteration1 into main
