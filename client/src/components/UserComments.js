@@ -14,7 +14,7 @@ export default function UserComments() {
 		  console.log(da);
 		}
 		getcms();
-	  });
+	  },[user.sub]);
 	return(
 		cm.map((i)=>{return <p>{i.Comment}</p>})
 	)
