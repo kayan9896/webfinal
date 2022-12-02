@@ -8,7 +8,7 @@ export default function UserComments() {
 	const [cm,setCm]=useState([]);
 	useEffect(() => {
 		async function getcms() {
-		  let cmt = await fetch(`http://localhost:3005/users/comments/usercm/${user.sub}`);
+		  let cmt = await fetch(`https://gamewebsite.onrender.com/users/comments/usercm/${user.sub}`);
 		  const da = await cmt.json();
 		  if (cmt.ok) setCm(da);
 		  console.log(da);
