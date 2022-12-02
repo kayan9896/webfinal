@@ -55,7 +55,7 @@ function App() {
             </>
           }
         />
-        <Route path="/profile" element={<><Header /><Profile/><UserComments/></>}/>
+        <Route path="/profile" element={<><Header /><Profile/></>}/>
         <Route path="*" element={<p>Nothing to match this path. </p>} />
 		
 		
