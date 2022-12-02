@@ -6,6 +6,7 @@ import Mini from "./components/Mini";
 import Home from "./components/Home";
 import MiniDetails from "./components/MiniDetails"; 
 import Profile from "./components/Profile";
+import UserComments from "./components/UserComments";
 
 function App() {
  
@@ -54,7 +55,7 @@ function App() {
             </>
           }
         />
-        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/profile" element={<><Header /><Profile/><UserComments/></>}/>
         <Route path="*" element={<p>Nothing to match this path. </p>} />
 		
 		

@@ -8,6 +8,7 @@ const {
   getonecm,
   deletecmdb,
   updatecmdb,
+  getusercm,
   getPostComments,
 } = require("../db");
 const { body, validationResult } = require("express-validator");
@@ -42,15 +43,15 @@ router.delete("/comments/delete/:cId", async function (req, res) {
     console.log(e);
   }
 });
-// router.get("/update/:gameId", async function (req, res) {
-//   try {
-//     const dt = await getonecm(req.params.gameId);
-//     //console.log(dt);
-//     res.json(dt);
-//   } catch (e) {
-//     console.log(e);
-//   }
-// });
+router.get("/comments/usercm/:usrId", async function (req, res) {
+  try {
+    const dt = await getusercm(req.params.usrId);
+    console.log(dt);
+    res.json(dt);
+  } catch (e) {
+    console.log(e);
+  }
+});
 router.post(
   "/update/:cId",
   body("Comment").isLength({ min: 1 }),
