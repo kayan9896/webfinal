@@ -89,19 +89,15 @@ module.exports.getonecm = async (cId) => {
     console.log(e);
   }
 };
-module.exports.getUsercm = async (userId) => {
-	try {
-		const dat = await c
-		  .db("game")
-		  .collection("cm")
-		  .find({ userId: userId })
-		  .toArray();
-		//console.log(mdb.ObjectId(n));
-		return dat;
-	  } catch (e) {
-		console.log(e);
-	  }
-  };
+module.exports.getusercm = async (usrId) => {
+  try {
+    const dat = await c.db("game").collection("cm").find({ userId: usrId }).toArray();
+    //console.log(mdb.ObjectId(n));
+    return dat;
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 module.exports.getPostComments = async (n) => {
   try {
