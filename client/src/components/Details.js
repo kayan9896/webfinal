@@ -110,9 +110,9 @@ export default function Details() {
             ? gameDetails?.["is_free"] === true
               ? "Get This Game for free!"
               : `Buy This Game! ${
-                  // gameDetails?.["price_overview"] &&
-                  gameDetails?.["price_overview"].final_formatted
-                }`
+              // gameDetails?.["price_overview"] &&
+              gameDetails?.["price_overview"].final_formatted
+              }`
             : null}
         </button>
       </div>
