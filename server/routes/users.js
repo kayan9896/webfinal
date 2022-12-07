@@ -91,7 +91,7 @@ router.post("/new", async function (req, res) {
         createDate: new Date(),
       });
       res.status(201).send({ ok: insertResult.acknowledged });
-    } catch (error) {}
+    } catch (error) { }
     // res.redirect("/");
   } catch (e) {
     console.log(e);
