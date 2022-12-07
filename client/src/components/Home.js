@@ -24,10 +24,9 @@ export default function Home() {
         );
         if (data.ok) {
           setAppList(data.list);
-          setAppList(data.list);
           setLoading(false);
         }
-        // console.log(data);
+        console.log(data);
       } catch (error) {
         console.log(error);
       }
@@ -68,7 +67,7 @@ export default function Home() {
               let filter = searchParams.get("filter");
               if (!filter) return true;
               let name = i.name.toLowerCase();
-              return name.startsWith(filter.toLowerCase());
+              return name.includes(filter.toLowerCase());
             })
             .map((app, i) => {
               return (

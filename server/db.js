@@ -89,6 +89,15 @@ module.exports.getonecm = async (cId) => {
     console.log(e);
   }
 };
+module.exports.getusercm = async (usrId) => {
+  try {
+    const dat = await c.db("game").collection("cm").find({ userId: usrId }).toArray();
+    //console.log(mdb.ObjectId(n));
+    return dat;
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 module.exports.getPostComments = async (n) => {
   try {
@@ -124,6 +133,18 @@ module.exports.deletecmdb = async (cId) => {
       .deleteOne({ commentId: cId });
     console.log(`${dat.deletedCount}  matched.`);
   } catch (e) {
+    console.log(e);
+  }
+};
+
+module.exports.buyGame = async (gId, email) => {
+  try {
+    const dbRes = c
+      .db("game")
+      .collection("sales")
+      .insertOne({ gameId: gId, email });
+    return dbRes;
+  } catch (error) {
     console.log(e);
   }
 };

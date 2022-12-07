@@ -2,8 +2,8 @@ var express = require("express");
 var router = express.Router();
 const { addtodb, readdb, getone, deletedb, updatedb } = require("../db");
 const { body, validationResult } = require("express-validator");
-const fs = require('fs')
-const path = require('path')
+const fs = require("fs");
+const path = require("path");
 const axios = require("axios");
 /* GET home page. */
 router.get("/", async function (req, res, next) {
@@ -102,10 +102,10 @@ router.get("/getapps", async (req, res) => {
     // let appList = fs.readFileSync(path.join(__dirname + "/../jsons/v2.json"));
     // appList = JSON.parse(appList);
     // console.log( appList.applist.apps[100]);
-// appList
+    // appList
     //let rd=Math.random() * 100000
     let list = await Promise.all(
-      appList.data.applist.apps.slice(100, 110).map(async ({ appid }) => {
+      appList.data.applist.apps.slice(10000, 10022).map(async ({ appid }) => {
         let { data } = await axios.get(
           `https://store.steampowered.com/api/appdetails?appids=${appid}`
         );
@@ -126,9 +126,11 @@ router.get("/game/:sid", async (req, res) => {
   try {
     console.log("---Getting App Details");
     const { sid } = req.params;
+    console.log("send detail request");
     let { data } = await axios.get(
       `https://store.steampowered.com/api/appdetails?appids=${sid}`
     );
+    console.log("request answered");
     if (data[`${sid}`].success) {
       const {
         name,
@@ -146,6 +148,7 @@ router.get("/game/:sid", async (req, res) => {
       res.send({
         ok: true,
         details: {
+          gameId: sid,
           name,
           is_free,
           header_image,

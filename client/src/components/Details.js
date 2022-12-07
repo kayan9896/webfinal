@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import TextareaAutosize from "@mui/material/TextareaAutosize";
 import LoadingButton from "@mui/lab/LoadingButton";
@@ -11,6 +11,7 @@ export default function Details() {
   const { isAuthenticated, user } = useAuth0();
   // console.log(user);
   // console.log(useParams());
+  const navigate = useNavigate();
   const { sid } = useParams();
   const [gameDetails, setGameDetails] = useState({});
 
@@ -24,7 +25,7 @@ export default function Details() {
   const [onEditCommentId, setOnEditId] = useState(0);
   async function getComments() {
     let commentData = await axios.get(
-      `http://localhost:3005/users/comments/${sid}`
+      `https://gamewebsite.onrender.com/users/comments/${sid}`
     );
     // console.log(commentData.data)
     setCommentData(commentData.data);
@@ -40,19 +41,22 @@ export default function Details() {
 
     getGameDetails();
     getComments();
-  }, [sid]);
+  }, []);
 
   async function submitCommentHandler() {
     if (!commentText.length) {
       return alert("Fill the text area first!");
     }
     SetSubmitButtonStatus(true);
-    let { data } = await axios.post("http://localhost:3005/users/new", {
-      userId: user.sub,
-      Comment: commentText,
-      gameId: sid,
-      nickname: user.nickname,
-    });
+    let { data } = await axios.post(
+      "https://gamewebsite.onrender.com/users/new",
+      {
+        userId: user.sub,
+        Comment: commentText,
+        gameId: sid,
+        nickname: user.nickname,
+      }
+    );
     if (data.ok) {
       getComments();
       setCommentText("");
@@ -64,7 +68,7 @@ export default function Details() {
   async function submitEditedComment() {
     SetSubmitEditButtonStatus(true);
     let { data } = await axios.post(
-      `http://localhost:3005/users/update/${onEditCommentId}`,
+      `https://gamewebsite.onrender.com/users/update/${onEditCommentId}`,
       {
         Comment: commentTextEdit,
         userId: user.sub,
@@ -85,7 +89,7 @@ export default function Details() {
     );
     if (confirmation) {
       let { data } = await axios.delete(
-        `http://localhost:3005/users/comments/delete/${cId}`
+        `https://gamewebsite.onrender.com/users/comments/delete/${cId}`
       );
 
       if (data.ok) {
@@ -94,9 +98,24 @@ export default function Details() {
       }
     }
   }
-
   return (
     <div>
+      <div className="buyArea_btn">
+        <button
+          onClick={() => {
+            navigate("/buy", { state: { game: { ...gameDetails } } });
+          }}
+        >
+          {Object.keys(gameDetails).length
+            ? gameDetails?.["is_free"] === true
+              ? "Get This Game for free!"
+              : `Buy This Game! ${
+                  // gameDetails?.["price_overview"] &&
+                  gameDetails?.["price_overview"].final_formatted
+                }`
+            : null}
+        </button>
+      </div>
       <div className="details__area">
         <table className="details__table">
           <tbody>
@@ -164,7 +183,7 @@ export default function Details() {
                 case "release_date":
                   return (
                     <tr>
-                      <td>Price</td>
+                      <td>Release date</td>
                       <td>{gameDetails[key]["date"]}</td>
                     </tr>
                   );

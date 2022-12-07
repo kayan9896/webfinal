@@ -5,20 +5,16 @@ import Header from "./components/Header";
 import Mini from "./components/Mini";
 import Home from "./components/Home";
 import MiniDetails from "./components/MiniDetails";
-
- 
 import Profile from "./components/Profile";
-
+import UserComments from "./components/UserComments";
+import Buy from "./components/Buy";
 function App() {
- 
   useEffect(() => {
-    document.title = "NEU WebFinal Games"
-	
-  }, [])
-  
+    document.title = "NEU WebFinal Games";
+  }, []);
+
   return (
     <div className="App">
-     
       <Routes>
         <Route
           path="/"
@@ -56,11 +52,25 @@ function App() {
             </>
           }
         />
-        {/* <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} /> */}
+        <Route
+          path="/buy"
+          element={
+            <>
+              <Header />
+              <Buy />
+            </>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <>
+              <Header />
+              <Profile />
+            </>
+          }
+        />
         <Route path="*" element={<p>Nothing to match this path. </p>} />
-		<Route path="/profile" element={Profile}/>
-		
       </Routes>
     </div>
   );

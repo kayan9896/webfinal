@@ -25,7 +25,7 @@ export default function Mini() {
         }
         const da = await re.json();
         setLoading(false);
-        console.log(da);
+        // console.log(da);
         setMiniList(da);
       } catch (error) {
         console.log(error);
@@ -68,7 +68,7 @@ export default function Mini() {
                 let filter = searchParams.get("filter");
                 if (!filter) return true;
                 let name = i.Game.toLowerCase();
-                return name.startsWith(filter.toLowerCase());
+                return name.includes(filter.toLowerCase());
               })
               .map((i) => {
                 return (

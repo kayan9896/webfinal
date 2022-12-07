@@ -8,7 +8,9 @@ const {
   getonecm,
   deletecmdb,
   updatecmdb,
+  getusercm,
   getPostComments,
+  buyGame,
 } = require("../db");
 const { body, validationResult } = require("express-validator");
 const axios = require("axios");
@@ -42,15 +44,15 @@ router.delete("/comments/delete/:cId", async function (req, res) {
     console.log(e);
   }
 });
-// router.get("/update/:gameId", async function (req, res) {
-//   try {
-//     const dt = await getonecm(req.params.gameId);
-//     //console.log(dt);
-//     res.json(dt);
-//   } catch (e) {
-//     console.log(e);
-//   }
-// });
+router.get("/comments/usercm/:usrId", async function (req, res) {
+  try {
+    const dt = await getusercm(req.params.usrId);
+    console.log(dt);
+    res.json(dt);
+  } catch (e) {
+    console.log(e);
+  }
+});
 router.post(
   "/update/:cId",
   body("Comment").isLength({ min: 1 }),
@@ -96,4 +98,12 @@ router.post("/new", async function (req, res) {
   }
 });
 
+router.post("/buy", async (req, res) => {
+  try {
+    const dbr = await buyGame(req.body.gameId, req.body.email);
+    res.send({ ok: dbr.acknowledged });
+  } catch (error) {
+    console.log(error);
+  }
+});
 module.exports = router;
