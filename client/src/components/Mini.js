@@ -25,7 +25,7 @@ export default function Mini() {
         }
         const da = await re.json();
         setLoading(false);
-        console.log(da);
+        // console.log(da);
         setMiniList(da);
       } catch (error) {
         console.log(error);

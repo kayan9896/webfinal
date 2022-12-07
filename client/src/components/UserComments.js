@@ -5,18 +5,22 @@ import { useParams } from "react-router-dom";
 
 export default function UserComments() {
 	const { user, isAuthenticated } = useAuth0();
-	const [cm,setCm]=useState([]);
+	const [cm, setCm] = useState([]);
 	useEffect(() => {
 		async function getcms() {
-		  let cmt = await fetch(`https://gamewebsite.onrender.com/users/comments/usercm/${user.sub}`);
-		  const da = await cmt.json();
-		  if (cmt.ok) setCm(da);
-		  console.log(da);
+			let cmt = await fetch(`https://gamewebsite.onrender.com/users/comments/usercm/${user.sub}`);
+			const da = await cmt.json();
+			if (cmt.ok) setCm(da);
+			console.log(da);
 		}
 		getcms();
-	  },[user.sub]);
-	return(
-		cm.map((i)=>{return <p>{i.Comment}</p>})
-	)
+	}, [user.sub]);
+	if (cm.length === 0) {
+		return <h4>You haven't made any comments</h4>
+	}
+	else {
+		return cm.map((i) => { return <p>{i.Comment}</p> })
+	}
 
 }
+

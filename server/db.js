@@ -136,3 +136,15 @@ module.exports.deletecmdb = async (cId) => {
     console.log(e);
   }
 };
+
+module.exports.buyGame = async (gId, email) => {
+  try {
+    const dbRes = c
+      .db("game")
+      .collection("sales")
+      .insertOne({ gameId: gId, email });
+    return dbRes;
+  } catch (error) {
+    console.log(e);
+  }
+};

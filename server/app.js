@@ -40,7 +40,7 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-// app.listen(3005)
-// const db = require('./db')
-// db.connectdb()
+app.listen(3005)
+const db = require('./db')
+db.connectdb()
 module.exports = app;

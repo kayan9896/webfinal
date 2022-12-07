@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Auth0ProviderWithHistory({ children }) {
   let navigate = useNavigate();
-  console.log(process.env)
+// console.log(process.env)
   const redirect = (appState) => {
     navigate(appState?.returnTo || window.location.pathname);
   };

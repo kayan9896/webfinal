@@ -12,7 +12,7 @@ export default function MiniDetails() {
       );
       const da = await re.json();
       if (re.ok) setDetails(da);
-      console.log(da);
+      // console.log(da);
     }
     getdetails();
   }, [gameId]);

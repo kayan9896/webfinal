@@ -119,8 +119,8 @@ embed {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid #ccc;
-width: 100%;
-margin-bottom: 50px;
+  width: 100%;
+  margin-bottom: 50px;
 }
 .commentArea_userComment p {
   text-align: justify;
@@ -131,4 +131,68 @@ margin-bottom: 50px;
   cursor: pointer;
   color: rgb(216, 85, 62);
   font-weight: 600;
+}
+@media screen and (min-width: 300px) {
+  #authButton {
+    all: unset;
+    cursor: pointer;
+    color: rgb(216, 85, 62);
+    font-weight: 600;
+  }
+}
+
+.buyArea_btn {
+  text-align: center;
+}
+.buyArea_btn button {
+  all: unset;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.buyArea_btn button:hover {
+  background-color: rgb(28, 189, 100);
+  color: rgb(255, 255, 255);
+}
+.buyArea__form {
+  display: flex;
+  flex-direction: column !important ;
+  width: 40%;
+  margin: 0 auto;
+}
+.buyAre__form__sec {
+  /* margin-top: 10px; */
+  display: flex;
+  justify-content: space-between;
+}
+.buyArea__form label {
+  margin-bottom: 5px;
+}
+.buyArea__form input {
+  all: unset;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.buyArea__form button {
+  all: unset;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-top: 20px;
+}
+.buyArea__form button:hover {
+  border-color: rgb(162, 80, 255);
+  margin-top: 24px;
+  box-shadow: -1px 1px 20px -8px rgba(0, 0, 0, 0.75);
 }

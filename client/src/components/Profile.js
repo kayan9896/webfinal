@@ -10,17 +10,19 @@ const Profile = () => {
   if (isLoading) {
     return <div>Loading ...</div>;
   }
-  if (!isAuthenticated){
+  if (!isAuthenticated) {
     loginWithRedirect()
   }
   return (
-    isAuthenticated && ( 
-     <div>
+    isAuthenticated && (
+      <div>
         <img src={user.picture} alt={user.name} />
         <h2>{user.name}</h2>
         <p>{user.email}</p>
         <JSONPretty data={user} />
-        <UserComments/>
+        <div>
+          <UserComments />
+        </div>
       </div>
     )
   )
