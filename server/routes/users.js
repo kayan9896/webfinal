@@ -10,7 +10,6 @@ const {
   updatecmdb,
   getusercm,
   getPostComments,
-  buyGame,
 } = require("../db");
 const { body, validationResult } = require("express-validator");
 const axios = require("axios");
@@ -78,13 +77,8 @@ router.post(
 );
 router.post("/new", async function (req, res) {
   try {
-<<<<<<< Updated upstream
-    //console.log(req.body)
-    const { Comment, userId, gameId, nickname } = req.body;
-=======
-    console.log(req.body)
+    console.log("check",req.body)
     const { Comment, userId, gameId, nickname, gamename } = req.body;
->>>>>>> Stashed changes
 
     try {
       const insertResult = await addcmtodb({
@@ -92,24 +86,16 @@ router.post("/new", async function (req, res) {
         userId,
         gameId,
         nickname,
+		gamename,
         commentId: uid(5),
         createDate: new Date(),
       });
-	  
       res.status(201).send({ ok: insertResult.acknowledged });
-    } catch (error) { }
+    } catch (error) {}
     // res.redirect("/");
   } catch (e) {
     console.log(e);
   }
 });
 
-router.post("/buy", async (req, res) => {
-  try {
-    const dbr = await buyGame(req.body.gameId, req.body.email);
-    res.send({ ok: dbr.acknowledged });
-  } catch (error) {
-    console.log(error);
-  }
-});
 module.exports = router;
