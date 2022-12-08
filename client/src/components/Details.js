@@ -48,17 +48,6 @@ export default function Details() {
       return alert("Fill the text area first!");
     }
     SetSubmitButtonStatus(true);
-<<<<<<< Updated upstream
-    let { data } = await axios.post(
-      "https://gamewebsite.onrender.com/users/new",
-      {
-        userId: user.sub,
-        Comment: commentText,
-        gameId: sid,
-        nickname: user.nickname,
-      }
-    );
-=======
 	const gname = gameDetails.name;
 	console.log(gname);
     let { data } = await axios.post("https://gamewebsite.onrender.com/users/new", {
@@ -69,7 +58,6 @@ export default function Details() {
 	  gamename: gname,
     });
 	
->>>>>>> Stashed changes
     if (data.ok) {
       getComments();
       setCommentText("");
