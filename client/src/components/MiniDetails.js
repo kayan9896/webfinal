@@ -21,8 +21,9 @@ export default function MiniDetails() {
       container
       style={{
         flexDirection: "column",
-        alignItems: "center",
+        alignItems: "start",
         marginBottom: 100,
+        padding:"3%"
       }}
     >
       <Grid
@@ -31,19 +32,17 @@ export default function MiniDetails() {
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: "start",
         }}
       >
         <Grid xs={6} item style={{ width: "100%" }}>
           <h1>{details.Game}</h1>
           <embed
             src={details.Gamelink}
-            style={{ width: "100vw", height: "100vh" }}
+            style={{ width: "94vw", height: "100vh" }}
           />
-        </Grid>
-        <Grid xs={6} item>
-          <p style={{ textAlign: "justify" }}>{details.Description}</p>
-          <p style={{ textAlign: "justify" }}>{details.Instructions}</p>
+          <p style={{ width: "94vw",textAlign: "justify" }}>{details.Description}</p>
+          <p style={{ width: "94vw",textAlign: "justify" }}>{details.Instructions}</p>
         </Grid>
       </Grid>
     </Grid>

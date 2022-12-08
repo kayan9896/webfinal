@@ -28,7 +28,7 @@ export default function Buy() {
       allFilled = email.length > 0;
     }
     if (allFilled) {
-      const { data } = await axios.post("http://localhost:3005/users/buy", {
+      const { data } = await axios.post("https://gamewebsite.onrender.com/users/buy", {
         email,
         gameId: state.game.gameId,
         cardDetail,
@@ -42,7 +42,7 @@ export default function Buy() {
     <Container>
       <h4 style={{ textAlign: "center" }}>
         Buy {state.game.name} -{" "}
-        {state.game.is_free
+        {state.game.is_free||!state.game.price_overview
           ? "Free To Play"
           : state.game.price_overview.final_formatted}
       </h4>
@@ -54,7 +54,7 @@ export default function Buy() {
           </h2>
         ) : (
           <Grid item className="buyArea__form">
-            {!state.game.is_free ? (
+            {!(state.game.is_free||!state.game.price_overview) ? (
               <>
                 <label>Card Number</label>
                 <input
