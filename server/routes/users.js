@@ -78,8 +78,13 @@ router.post(
 );
 router.post("/new", async function (req, res) {
   try {
+<<<<<<< Updated upstream
     //console.log(req.body)
     const { Comment, userId, gameId, nickname } = req.body;
+=======
+    console.log(req.body)
+    const { Comment, userId, gameId, nickname, gamename } = req.body;
+>>>>>>> Stashed changes
 
     try {
       const insertResult = await addcmtodb({
@@ -90,6 +95,7 @@ router.post("/new", async function (req, res) {
         commentId: uid(5),
         createDate: new Date(),
       });
+	  
       res.status(201).send({ ok: insertResult.acknowledged });
     } catch (error) { }
     // res.redirect("/");
