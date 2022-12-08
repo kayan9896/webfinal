@@ -107,7 +107,7 @@ export default function Details() {
           }}
         >
           {Object.keys(gameDetails).length
-            ? gameDetails?.["is_free"] === true || gameDetails?.["price_overview"]===false
+            ? gameDetails?.["is_free"] === true || !gameDetails?.["price_overview"]
               ? "Get This Game for free!"
               : `Buy This Game! ${
               // gameDetails?.["price_overview"] &&

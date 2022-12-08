@@ -38,7 +38,7 @@ export default function MiniDetails() {
           <h1>{details.Game}</h1>
           <embed
             src={details.Gamelink}
-            style={{ width: "100%", height: 500 }}
+            style={{ width: "100vw", height: "100vh" }}
           />
         </Grid>
         <Grid xs={6} item>
