@@ -79,7 +79,7 @@ router.post(
 router.post("/new", async function (req, res) {
   try {
     //console.log(req.body)
-    const { Comment, userId, gameId, nickname } = req.body;
+    const { Comment, userId, gameId, nickname, gname } = req.body;
 
     try {
       const insertResult = await addcmtodb({
@@ -87,6 +87,7 @@ router.post("/new", async function (req, res) {
         userId,
         gameId,
         nickname,
+        gname,
         commentId: uid(5),
         createDate: new Date(),
       });

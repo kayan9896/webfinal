@@ -19,7 +19,20 @@ export default function UserComments() {
 		return <h4>You haven't made any comments</h4>
 	}
 	else {
-		return cm.map((i) => { return <p>{i.Comment}</p> })
+		return cm.map((i)=>{
+			return <>
+				<div>
+					<div>
+						<h4>Games</h4>
+						<p>{i.gname}</p>
+					</div>	
+					<div>
+						<h4>Your Comments</h4>
+						<p>{i.Comment}</p>
+					</div>
+				</div>
+			</>
+		})
 	}
 
 }

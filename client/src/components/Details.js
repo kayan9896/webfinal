@@ -55,6 +55,7 @@ export default function Details() {
         Comment: commentText,
         gameId: sid,
         nickname: user.nickname,
+        gname: gameDetails.name
       }
     );
     if (data.ok) {
