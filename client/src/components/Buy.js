@@ -19,7 +19,7 @@ export default function Buy() {
 
   async function submitHandler() {
     let allFilled;
-    if (!state.game.is_free) {
+    if (!(state.game.is_free||!state.game.price_overview)) {
       allFilled = Object.keys(cardDetail).every(
         (key) => cardDetail[key].length
       );
@@ -60,6 +60,7 @@ export default function Buy() {
                 <input
                   type="text"
                   placeholder="**** **** **** ****"
+                  maxLength={16}
                   onChange={({ target: { value } }) =>
                     setCardDetail({ ...cardDetail, number: value })
                   }
@@ -69,6 +70,8 @@ export default function Buy() {
                   <input
                     type="text"
                     placeholder="CVV"
+                    pattern={"[0-9]{3}"}
+                    maxLength={3}
                     onChange={({ target: { value } }) =>
                       setCardDetail({ ...cardDetail, cvv: value })
                     }
@@ -96,8 +99,11 @@ export default function Buy() {
 
             <label>Email</label>
             <input
-              type="text"
+            
               placeholder="To Recive The game"
+              type="text"
+              pattern="/^[a-zA-Z0-9.!#$%’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+              
               onChange={({ target: { value } }) => {
                 setEmail(value);
               }}
