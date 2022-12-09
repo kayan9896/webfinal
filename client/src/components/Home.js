@@ -72,7 +72,7 @@ export default function Home() {
             .map((app, i) => {
               return (
                 <Grid
-                key={app.steam_appid}
+                  key={app.steam_appid}
                   xs={2}
                   sm={3}
                   md={3}

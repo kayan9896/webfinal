@@ -107,7 +107,7 @@ router.get("/getapps", async (req, res) => {
     let list = await Promise.all(
       appList.data.applist.apps.slice(10000, 10022).map(async ({ appid }) => {
         let { data } = await axios.get(
-          `https://webfinal-server.onrender.com/api/appdetails?appids=${appid}`
+          `https://store.steampowered.com/api/appdetails?appids=${appid}`
         );
         if (data[`${appid}`].success) {
           const { name, steam_appid, header_image } = data[`${appid}`].data;
@@ -119,18 +119,18 @@ router.get("/getapps", async (req, res) => {
     res.send({ ok: true, list });
   } catch (error) {
     console.log(error.message);
-    res.send("error");
+    res.sendStatus(500)
   }
 });
 router.get("/game/:sid", async (req, res) => {
   try {
-    console.log("---Getting App Details");
+    // console.log("---Getting App Details");
     const { sid } = req.params;
-    console.log("send detail request");
+    // console.log("send detail request");
     let { data } = await axios.get(
       `https://store.steampowered.com/api/appdetails?appids=${sid}`
     );
-    console.log("request answered");
+    // console.log("request answered");
     if (data[`${sid}`].success) {
       const {
         name,
@@ -166,4 +166,5 @@ router.get("/game/:sid", async (req, res) => {
     res.statusCode(500);
   }
 });
+
 module.exports = router;
