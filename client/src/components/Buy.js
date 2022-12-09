@@ -28,7 +28,7 @@ export default function Buy() {
       allFilled = email.length > 0;
     }
     if (allFilled) {
-      const { data } = await axios.post("https://gamewebsite.onrender.com/users/buy", {
+      const { data } = await axios.post("https://kayan9896server.onrender.com/users/buy", {
         email,
         gameId: state.game.gameId,
         cardDetail,
