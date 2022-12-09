@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 
 export default function UserComments() {
 	const { user, isAuthenticated } = useAuth0();
@@ -21,12 +21,13 @@ export default function UserComments() {
 	else {
 		return cm.map((i)=>{
 			return <>
-				<div>
-					<div>
+				<div className="row">
+					<div className="column">
 						<h4>Games</h4>
-						<p>{i.gname}</p>
+						<Link to={`/game/${i.gameId}`}>{i.gname}</Link>
+						
 					</div>	
-					<div>
+					<div className="column">
 						<h4>Your Comments</h4>
 						<p>{i.Comment}</p>
 					</div>
