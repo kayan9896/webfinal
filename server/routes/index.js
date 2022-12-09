@@ -107,7 +107,7 @@ router.get("/getapps", async (req, res) => {
     let list = await Promise.all(
       appList.data.applist.apps.slice(10000, 10022).map(async ({ appid }) => {
         let { data } = await axios.get(
-          `https://gamewebsite.onrender.com/api/appdetails?appids=${appid}`
+          `https://webfinal-server.onrender.com/api/appdetails?appids=${appid}`
         );
         if (data[`${appid}`].success) {
           const { name, steam_appid, header_image } = data[`${appid}`].data;

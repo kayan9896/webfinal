@@ -25,7 +25,7 @@ export default function Details() {
   const [onEditCommentId, setOnEditId] = useState(0);
   async function getComments() {
     let commentData = await axios.get(
-      `https://gamewebsite.onrender.com/users/comments/${sid}`
+      `https://webfinal-server.onrender.com/users/comments/${sid}`
     );
     // console.log(commentData.data)
     setCommentData(commentData.data);
@@ -33,7 +33,7 @@ export default function Details() {
   useEffect(() => {
     async function getGameDetails() {
       let { data } = await axios.get(
-        `https://gamewebsite.onrender.com/game/${sid}`
+        `https://webfinal-server.onrender.com/game/${sid}`
       );
       // console.log(data);
       if (data.ok) setGameDetails(data.details);
@@ -50,7 +50,7 @@ export default function Details() {
     SetSubmitButtonStatus(true);
 	const gname = gameDetails.name;
 	console.log(gname);
-    let { data } = await axios.post("https://gamewebsite.onrender.com/users/new", {
+    let { data } = await axios.post("https://webfinal-server.onrender.com/users/new", {
       userId: user.sub,
       Comment: commentText,
       gameId: sid,
@@ -69,7 +69,7 @@ export default function Details() {
   async function submitEditedComment() {
     SetSubmitEditButtonStatus(true);
     let { data } = await axios.post(
-      `https://gamewebsite.onrender.com/users/update/${onEditCommentId}`,
+      `https://webfinal-server.onrender.com/users/update/${onEditCommentId}`,
       {
         Comment: commentTextEdit,
         userId: user.sub,
@@ -90,7 +90,7 @@ export default function Details() {
     );
     if (confirmation) {
       let { data } = await axios.delete(
-        `https://gamewebsite.onrender.com/users/comments/delete/${cId}`
+        `https://webfinal-server.onrender.com/users/comments/delete/${cId}`
       );
 
       if (data.ok) {
