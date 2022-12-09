@@ -107,11 +107,7 @@ router.get("/getapps", async (req, res) => {
     let list = await Promise.all(
       appList.data.applist.apps.slice(10000, 10022).map(async ({ appid }) => {
         let { data } = await axios.get(
-<<<<<<< Updated upstream
-          `https://store.steampowered.com/api/appdetails?appids=${appid}`
-=======
           `https://gamewebsite.onrender.com/api/appdetails?appids=${appid}`
->>>>>>> Stashed changes
         );
         if (data[`${appid}`].success) {
           const { name, steam_appid, header_image } = data[`${appid}`].data;
