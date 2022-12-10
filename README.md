@@ -3,11 +3,19 @@ Meixuan Chen  - branch MC    user part <br />
 Xiaoyang Zhao - branch kayan9896&test2    server part <br />
 We merge all into the main branch.<br />
 
-After iteration3, we add a payment functions in the webset.
-Arghavan Ayoughi contribute on this function.<br />
+After iteration3, we have finished the web application. 
+We added a payment functions in the webset. Arghavan Ayoughi contributed on this function.<br />
 <img width="694" alt="comments" src="https://user-images.githubusercontent.com/97938339/206839387-4bd8b6c2-9c01-4200-9a83-41df197f953a.PNG">
 <img width="694" alt="comments" src="https://user-images.githubusercontent.com/97938339/206839400-54b04742-a9b4-4dda-b542-fe63bb060186.PNG">
 <img width="694" alt="comments" src="https://user-images.githubusercontent.com/97938339/206839476-98cb5cc8-15bd-4f0a-9518-bfcdaaebda4e.PNG">
+<br/>
+We also enabled users to view their comments in the profile page and go to the game details pages where they have left comments.<br/>
+Xiaoyang Zhao and Meixuan Chen finished this part.<br/>
+<img width="792" alt="usesr" src="https://user-images.githubusercontent.com/90473306/206873458-a7f47d14-9b0a-42d6-9afa-0e5e6fcb6ba5.png">
+<br/>
+Lastly, we reviewed all the web pages and fix the size to display games so that it can adapt to different advices or different window sizes of the browsers.<br/>
+<img width="488" alt="sm" src="https://user-images.githubusercontent.com/90473306/206873695-3ee7f80e-f0f8-401f-9f62-87d0f45aad95.png">
+<img width="938" alt="wide" src="https://user-images.githubusercontent.com/90473306/206873698-ce8678cd-80f6-47b1-8d90-5b4e3a41ba85.png">
 
 
 After the iteration2, we have finished most functions of the website.
