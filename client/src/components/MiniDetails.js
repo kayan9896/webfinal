@@ -8,7 +8,7 @@ export default function MiniDetails() {
   useEffect(() => {
     async function getdetails() {
       let re = await fetch(
-        `https://webfinal-server.onrender.com/api/json/${gameId}`
+        `https://kayan9896server.onrender.com/api/json/${gameId}`
       );
       const da = await re.json();
       if (re.ok) setDetails(da);

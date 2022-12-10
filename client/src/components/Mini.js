@@ -19,7 +19,7 @@ export default function Mini() {
     async function getIds() {
       try {
         setLoading(true);
-        let re = await fetch("https://webfinal-server.onrender.com/api/listall");
+        let re = await fetch("https://kayan9896server.onrender.com/api/listall");
         if (!re.ok) {
           throw new Error(`e:${re.status}`);
         }

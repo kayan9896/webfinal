@@ -3,6 +3,19 @@ Meixuan Chen  - branch MC    user part <br />
 Xiaoyang Zhao - branch kayan9896&test2    server part <br />
 We merge all into the main branch.<br />
 
+After iteration3, we have finished the web application. 
+We added a payment functions in the webset. Arghavan Ayoughi contributed on this function.<br />
+<img width="694" alt="comments" src="https://user-images.githubusercontent.com/97938339/206839387-4bd8b6c2-9c01-4200-9a83-41df197f953a.PNG">
+<img width="694" alt="comments" src="https://user-images.githubusercontent.com/97938339/206839400-54b04742-a9b4-4dda-b542-fe63bb060186.PNG">
+<img width="694" alt="comments" src="https://user-images.githubusercontent.com/97938339/206839476-98cb5cc8-15bd-4f0a-9518-bfcdaaebda4e.PNG">
+ <br/>
+We also reviewed all web pages and fixed the size to display games so that it can adapt to different advices or different window sizes of the browser.<br/>
+Xiaoyang Zhao tested and made some changes.<br/>
+<img width="488" alt="sm" src="https://user-images.githubusercontent.com/90473306/206873695-3ee7f80e-f0f8-401f-9f62-87d0f45aad95.png">
+<img width="938" alt="wide" src="https://user-images.githubusercontent.com/90473306/206873698-ce8678cd-80f6-47b1-8d90-5b4e3a41ba85.png">
+![4D1B0E9B-EB70-4131-8D9B-AB048D9B20E1](https://user-images.githubusercontent.com/90473306/206873822-94e23d96-a297-4f47-8200-65f4b61cf1ef.jpeg)
+<br/>
+
 After the iteration2, we have finished most functions of the website.
 Arghavan Ayoughi made most contribution to the client part, including home page, game detail page, comments section inside the detail page and so on.
 Here is the home page of the client. <br />
@@ -23,9 +36,9 @@ Xiaoyang Zhao contributed to these functions. <br />
 <img width="556" alt="minidetail" src="https://user-images.githubusercontent.com/90473306/205114042-f46fc6a7-77b2-410b-ae02-7482d55d7dcf.png">
 <br />
 
-Meixuan Chen completed the log in and user profile. <br />
+Meixuan Chen completed the log in and user profile, including the comments user made for the games and link direct them to the game. <br />
 <img width="546" alt="login" src="https://user-images.githubusercontent.com/90473306/205114260-e781c412-f021-4c71-8975-9c9e3771c472.png">
-<img width="468" alt="profile" src="https://user-images.githubusercontent.com/90473306/205114285-21fe3c09-d027-4b63-b5b7-fb4b0d9c6f6b.png">
+<img width="468" alt="profile" src="https://user-images.githubusercontent.com/97938339/206839159-7a3d8732-7d2f-4b35-91fc-c98f16d9e107.PNG">
 <br />
 
 And we also have a server part.<br />

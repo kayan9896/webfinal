@@ -20,7 +20,7 @@ export default function Home() {
       try {
         setLoading(true);
         let { data } = await axios.get(
-          "https://webfinal-server.onrender.com/getapps"
+          "https://kayan9896server.onrender.com/getapps"
         );
         if (data.ok) {
           setAppList(data.list);
@@ -72,7 +72,7 @@ export default function Home() {
             .map((app, i) => {
               return (
                 <Grid
-                  key={app.steam_appid}
+                key={app.steam_appid}
                   xs={2}
                   sm={3}
                   md={3}
@@ -83,6 +83,7 @@ export default function Home() {
                       component="img"
                       height="140"
                       image={app.header_image}
+                      alt={app.name + " cover"}
                     />
                     <CardContent>{app.name}</CardContent>
                     <CardActions>

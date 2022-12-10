@@ -25,7 +25,7 @@ export default function Details() {
   const [onEditCommentId, setOnEditId] = useState(0);
   async function getComments() {
     let commentData = await axios.get(
-      `https://webfinal-server.onrender.com/users/comments/${sid}`
+      `https://kayan9896server.onrender.com/users/comments/${sid}`
     );
     // console.log(commentData.data)
     setCommentData(commentData.data);
@@ -33,7 +33,7 @@ export default function Details() {
   useEffect(() => {
     async function getGameDetails() {
       let { data } = await axios.get(
-        `https://webfinal-server.onrender.com/game/${sid}`
+        `https://kayan9896server.onrender.com/game/${sid}`
       );
       // console.log(data);
       if (data.ok) setGameDetails(data.details);
@@ -48,16 +48,16 @@ export default function Details() {
       return alert("Fill the text area first!");
     }
     SetSubmitButtonStatus(true);
-	const gname = gameDetails.name;
-	console.log(gname);
-    let { data } = await axios.post("https://webfinal-server.onrender.com/users/new", {
-      userId: user.sub,
-      Comment: commentText,
-      gameId: sid,
-      nickname: user.nickname,
-	  gamename: gname,
-    });
-	
+    let { data } = await axios.post(
+      "https://kayan9896server.onrender.com/users/new",
+      {
+        userId: user.sub,
+        Comment: commentText,
+        gameId: sid,
+        nickname: user.nickname,
+        gname: gameDetails.name,
+      }
+    );
     if (data.ok) {
       getComments();
       setCommentText("");
@@ -69,7 +69,7 @@ export default function Details() {
   async function submitEditedComment() {
     SetSubmitEditButtonStatus(true);
     let { data } = await axios.post(
-      `https://webfinal-server.onrender.com/users/update/${onEditCommentId}`,
+      `https://kayan9896server.onrender.com/users/update/${onEditCommentId}`,
       {
         Comment: commentTextEdit,
         userId: user.sub,
@@ -90,7 +90,7 @@ export default function Details() {
     );
     if (confirmation) {
       let { data } = await axios.delete(
-        `https://webfinal-server.onrender.com/users/comments/delete/${cId}`
+        `https://kayan9896server.onrender.com/users/comments/delete/${cId}`
       );
 
       if (data.ok) {
@@ -108,33 +108,38 @@ export default function Details() {
           }}
         >
           {Object.keys(gameDetails).length
-            ? gameDetails?.["is_free"] === true || !gameDetails?.["price_overview"]
+            ? gameDetails?.["is_free"] === true ||
+              !gameDetails?.["price_overview"]
               ? "Get This Game for free!"
               : `Buy This Game! ${
-              // gameDetails?.["price_overview"] &&
-              gameDetails?.["price_overview"].final_formatted
-              }`
+                  // gameDetails?.["price_overview"] &&
+                  gameDetails?.["price_overview"].final_formatted
+                }`
             : null}
         </button>
       </div>
       <div className="details__area">
         <table className="details__table">
           <tbody>
-            {Object.keys(gameDetails).map((key) => {
+            {Object.keys(gameDetails).map((key,i) => {
               switch (key) {
                 case "header_image":
                   return (
-                    <tr>
-                      <td>{key}</td>
+                    <tr key={key + i}>
+                      <td>Game Cover</td>
                       <td>
-                        <embed src={gameDetails[key]} width={"30%"} />
+                        <img
+                          alt={gameDetails["name"]}
+                          src={gameDetails[key]}
+                          width={"30%"}
+                        />
                       </td>
                     </tr>
                   );
                 case "pc_requirements":
                   return (
-                    <React.Fragment>
-                      <tr>
+                    <React.Fragment key={key + i}>
+                      <tr >
                         <td>Minimum PC requirements</td>
                         <td
                           dangerouslySetInnerHTML={{
@@ -154,7 +159,7 @@ export default function Details() {
                   );
                 case "price_overview":
                   return (
-                    <tr>
+                    <tr key={key + i}>
                       <td>Current Price</td>
                       <td>{gameDetails[key].final_formatted}</td>
                     </tr>
@@ -164,7 +169,7 @@ export default function Details() {
                     ({ description }) => description
                   );
                   return (
-                    <tr>
+                    <tr key={key + i}>
                       <td>genres</td>
                       <td>{genres.join(", ")}</td>
                     </tr>
@@ -175,7 +180,7 @@ export default function Details() {
                     ({ description }) => description
                   );
                   return (
-                    <tr>
+                    <tr key={gameDetails[key]}>
                       <td>categories</td>
                       <td>{categories.join(", ")}</td>
                     </tr>
@@ -183,41 +188,56 @@ export default function Details() {
 
                 case "release_date":
                   return (
-                    <tr>
+                    <tr key={key + i}>
                       <td>Release date</td>
                       <td>{gameDetails[key]["date"]}</td>
                     </tr>
                   );
                 case "screenshots":
                   return (
-                    <tr>
+                    <tr key={key + i}>
                       <td style={{ borderBottomLeftRadius: 20 }}>
                         Screenshots
                       </td>
                       <td style={{ borderBottomRightRadius: 20 }}>
-                        {gameDetails[key].map(({ path_thumbnail }) => (
-                          <embed
-                            src={path_thumbnail}
+                        {gameDetails[key].map((el, i) => (
+                          <img
+                            src={el.path_thumbnail}
                             width={"20%"}
                             style={{ paddingRight: 10 }}
+                            alt={
+                              gameDetails["name"] +
+                              " - screenshot " +
+                              Number(i + 1)
+                            }
+                            key={i}
                           />
                         ))}
                       </td>
                     </tr>
                   );
                 default:
+    
+                  let details = gameDetails[key];
+                  if (typeof gameDetails[key] === "string")
+                    details = gameDetails[key].replaceAll(
+                      "<img",
+                      `<img alt="${gameDetails['name'] + " - detail"}"`
+                    );
                   return (
-                    <tr>
+                    <tr key={key + i}>
                       <td
-                        style={{ borderTopLeftRadius: key === "name" ? 20 : 0 }}
+                        style={{
+                          borderTopLeftRadius: key === "gameId" ? 20 : 0,
+                        }}
                       >
                         {key.replace("_", " ")}
                       </td>
                       <td
                         style={{
-                          borderTopRightRadius: key === "name" ? 20 : 0,
+                          borderTopRightRadius: key === "gameId" ? 20 : 0,
                         }}
-                        dangerouslySetInnerHTML={{ __html: gameDetails[key] }}
+                        dangerouslySetInnerHTML={{ __html: details }}
                       />
                     </tr>
                   );
@@ -322,7 +342,7 @@ export default function Details() {
             </LoadingButton>
           </React.Fragment>
         ) : (
-          <h4>Login First to post a comment</h4>
+          <h3>Login First to post a comment</h3>
         )}
       </div>
     </div>
