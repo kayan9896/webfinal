@@ -13,10 +13,11 @@ We also enabled users to view their comments in the profile page and go to the g
 Xiaoyang Zhao and Meixuan Chen finished this part.<br/>
 <img width="792" alt="usesr" src="https://user-images.githubusercontent.com/90473306/206873458-a7f47d14-9b0a-42d6-9afa-0e5e6fcb6ba5.png">
 <br/>
-Lastly, we reviewed all the web pages and fix the size to display games so that it can adapt to different advices or different window sizes of the browsers.<br/>
+Lastly, we reviewed all the web pages and fixed the size to display games so that it can adapt to different advices or different window sizes of the browsers.<br/>
 <img width="488" alt="sm" src="https://user-images.githubusercontent.com/90473306/206873695-3ee7f80e-f0f8-401f-9f62-87d0f45aad95.png">
 <img width="938" alt="wide" src="https://user-images.githubusercontent.com/90473306/206873698-ce8678cd-80f6-47b1-8d90-5b4e3a41ba85.png">
-
+![4D1B0E9B-EB70-4131-8D9B-AB048D9B20E1](https://user-images.githubusercontent.com/90473306/206873822-94e23d96-a297-4f47-8200-65f4b61cf1ef.jpeg)
+<br/>
 
 After the iteration2, we have finished most functions of the website.
 Arghavan Ayoughi made most contribution to the client part, including home page, game detail page, comments section inside the detail page and so on.
