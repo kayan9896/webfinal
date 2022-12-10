@@ -83,6 +83,7 @@ export default function Home() {
                       component="img"
                       height="140"
                       image={app.header_image}
+                      alt={app.name + " cover"}
                     />
                     <CardContent>{app.name}</CardContent>
                     <CardActions>

@@ -129,17 +129,10 @@ embed {
 #authButton {
   all: unset;
   cursor: pointer;
-  color: rgb(216, 85, 62);
+  color: rgb(28 28 28);
   font-weight: 600;
 }
-@media screen and (min-width: 300px) {
-  #authButton {
-    all: unset;
-    cursor: pointer;
-    color: rgb(216, 85, 62);
-    font-weight: 600;
-  }
-}
+ 
 
 .buyArea_btn {
   text-align: center;
