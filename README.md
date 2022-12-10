@@ -7,6 +7,8 @@ After iteration3, we add a payment functions in the webset.
 Arghavan Ayoughi contribute on this function.<br />
 <img width="694" alt="comments" src="https://user-images.githubusercontent.com/97938339/206839387-4bd8b6c2-9c01-4200-9a83-41df197f953a.PNG">
 <img width="694" alt="comments" src="https://user-images.githubusercontent.com/97938339/206839400-54b04742-a9b4-4dda-b542-fe63bb060186.PNG">
+<img width="694" alt="comments" src="https://user-images.githubusercontent.com/97938339/206839476-98cb5cc8-15bd-4f0a-9518-bfcdaaebda4e.PNG">
+
 
 After the iteration2, we have finished most functions of the website.
 Arghavan Ayoughi made most contribution to the client part, including home page, game detail page, comments section inside the detail page and so on.
