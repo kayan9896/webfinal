@@ -3,6 +3,11 @@ Meixuan Chen  - branch MC    user part <br />
 Xiaoyang Zhao - branch kayan9896&test2    server part <br />
 We merge all into the main branch.<br />
 
+After iteration3, we add a payment functions in the webset.
+Arghavan Ayoughi contribute on this function.<br />
+<img width="694" alt="comments" src="[https://user-images.githubusercontent.com/97938339/206839274-6dcb9a9d-4b84-49cd-8e5d-b6e02a02e793.PNG]">
+<img width="694" alt="comments" src="[https://user-images.githubusercontent.com/97938339/206839349-cf4f8af5-9d0c-45c8-98ec-f0eb591a7783.PNG]">
+
 After the iteration2, we have finished most functions of the website.
 Arghavan Ayoughi made most contribution to the client part, including home page, game detail page, comments section inside the detail page and so on.
 Here is the home page of the client. <br />
@@ -23,7 +28,7 @@ Xiaoyang Zhao contributed to these functions. <br />
 <img width="556" alt="minidetail" src="https://user-images.githubusercontent.com/90473306/205114042-f46fc6a7-77b2-410b-ae02-7482d55d7dcf.png">
 <br />
 
-Meixuan Chen completed the log in and user profile. <br />
+Meixuan Chen completed the log in and user profile, including the comments user made for the games and link direct them to the game. <br />
 <img width="546" alt="login" src="https://user-images.githubusercontent.com/90473306/205114260-e781c412-f021-4c71-8975-9c9e3771c472.png">
 <img width="468" alt="profile" src="https://user-images.githubusercontent.com/97938339/206839159-7a3d8732-7d2f-4b35-91fc-c98f16d9e107.PNG">
 <br />
