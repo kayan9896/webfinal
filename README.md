@@ -25,7 +25,7 @@ Xiaoyang Zhao contributed to these functions. <br />
 
 Meixuan Chen completed the log in and user profile. <br />
 <img width="546" alt="login" src="https://user-images.githubusercontent.com/90473306/205114260-e781c412-f021-4c71-8975-9c9e3771c472.png">
-<img width="468" alt="profile" src="https://user-images.githubusercontent.com/90473306/205114285-21fe3c09-d027-4b63-b5b7-fb4b0d9c6f6b.png">
+<img width="468" alt="profile" src="https://user-images.githubusercontent.com/97938339/206839159-7a3d8732-7d2f-4b35-91fc-c98f16d9e107.PNG">
 <br />
 
 And we also have a server part.<br />
