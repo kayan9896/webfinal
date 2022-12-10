@@ -5,8 +5,8 @@ We merge all into the main branch.<br />
 
 After iteration3, we add a payment functions in the webset.
 Arghavan Ayoughi contribute on this function.<br />
-<img width="694" alt="comments" src="[https://user-images.githubusercontent.com/97938339/206839274-6dcb9a9d-4b84-49cd-8e5d-b6e02a02e793.PNG]">
-<img width="694" alt="comments" src="[https://user-images.githubusercontent.com/97938339/206839349-cf4f8af5-9d0c-45c8-98ec-f0eb591a7783.PNG]">
+<img width="694" alt="comments" src="https://user-images.githubusercontent.com/97938339/206839387-4bd8b6c2-9c01-4200-9a83-41df197f953a.PNG">
+<img width="694" alt="comments" src="https://user-images.githubusercontent.com/97938339/206839400-54b04742-a9b4-4dda-b542-fe63bb060186.PNG">
 
 After the iteration2, we have finished most functions of the website.
 Arghavan Ayoughi made most contribution to the client part, including home page, game detail page, comments section inside the detail page and so on.
