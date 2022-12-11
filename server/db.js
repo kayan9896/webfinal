@@ -39,6 +39,46 @@ module.exports.getone = async (n) => {
     console.log(e);
   }
 };
+module.exports.getoneuser = async (n) => {
+	try {
+	  const dat = await c
+		.db("game")
+		.collection("user")
+		.findOne({ userId: n });
+	  return dat;
+	} catch (e) {
+	  console.log(e);
+	}
+  };
+  module.exports.readuserdb = async () => {
+	try {
+	  const dat = await c.db("game").collection("user").find();
+	  return dat.toArray();
+	} catch (e) {
+	  console.log(e);
+	}
+  };
+  module.exports.registeruser = async (id, name) => {
+	try {
+		const add = await c.db("game").collection("user").insertOne({userId:id, username: name});
+	} catch (e) {
+	  console.log(e);
+	}
+  };
+  module.exports.updateuser = async (userId,name) => {
+	try {
+	  const dat = await c
+		.db("game")
+		.collection("user")
+		.updateOne({ userId }, { $set: {username: name} });
+	  const userdat = await c
+	  .db("game")
+	  .collection("cm")
+	  .updateMany({ userId }, { $set: {nickname: name} });
+	} catch (e) {
+	  console.log(e);
+	}
+  };
 module.exports.updatedb = async (gameId, pair) => {
   try {
     const dat = await c
