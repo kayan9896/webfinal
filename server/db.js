@@ -63,12 +63,12 @@ module.exports.getoneuser = async (n) => {
 	  console.log(e);
 	}
   };
-  module.exports.updateuser = async (id,change) => {
+  module.exports.updateuser = async (userId,change) => {
 	try {
 	  const dat = await c
 		.db("game")
 		.collection("user")
-		.updateMany({ _id: mdb.ObjectId(id)}, { $set: pair });
+		.updateOne({ userId }, { $set: pair });
 	} catch (e) {
 	  console.log(e);
 	}
