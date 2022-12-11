@@ -9,7 +9,7 @@ We added a payment functions in the webset. Arghavan Ayoughi contributed on this
 <img width="694" alt="comments" src="https://user-images.githubusercontent.com/97938339/206839400-54b04742-a9b4-4dda-b542-fe63bb060186.PNG">
 <img width="694" alt="comments" src="https://user-images.githubusercontent.com/97938339/206839476-98cb5cc8-15bd-4f0a-9518-bfcdaaebda4e.PNG">
  <br/>
-We also reviewed all web pages and fixed the size to display games so that it can adapt to different advices or different window sizes of the browser.<br/>
+We also reviewed all web pages and fixed the size to display games so that it can adapt to different devices or different sizes of the browser.<br/>
 Xiaoyang Zhao tested and made some changes.<br/>
 <img width="488" alt="sm" src="https://user-images.githubusercontent.com/90473306/206873695-3ee7f80e-f0f8-401f-9f62-87d0f45aad95.png">
 <img width="938" alt="wide" src="https://user-images.githubusercontent.com/90473306/206873698-ce8678cd-80f6-47b1-8d90-5b4e3a41ba85.png">
