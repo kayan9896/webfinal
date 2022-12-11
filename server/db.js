@@ -65,12 +65,16 @@ module.exports.getoneuser = async (n) => {
 	  console.log(e);
 	}
   };
-  module.exports.updateuser = async (userId,change) => {
+  module.exports.updateuser = async (userId,name) => {
 	try {
 	  const dat = await c
 		.db("game")
 		.collection("user")
-		.updateOne({ userId }, { $set: change });
+		.updateOne({ userId }, { $set: {username: name} });
+	  const userdat = await c
+	  .db("game")
+	  .collection("cm")
+	  .updateOne({ userId }, { $set: {nickname: name} });
 	} catch (e) {
 	  console.log(e);
 	}
