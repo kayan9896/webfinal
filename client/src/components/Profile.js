@@ -9,7 +9,7 @@ const Profile = () => {
   const [userDetails, setUserDetails] = useState({});
   useEffect(() => {
     async function getUsers() {
-      let { data } = await axios.get(`http://localhost:3005/user/${user.sub}`
+      let { data } = await axios.get(`http://localhost:3005/users/user/${user.sub}`
       );
       if (data.ok) setUserDetails(data.details);
     }
@@ -24,12 +24,12 @@ const Profile = () => {
   }
 
   async function submitUpdateName() {
-	const newName = document.getElementById("myText").value.length;
-	if (!newName) {
+	const newName = document.getElementById("myText").value;
+	if (newName.length === 0) {
 		return alert("You did not enter any name!");
 	  }
     let { data } = await axios.post(
-      `http://localhost:3005//user/${user.sub}/update/`,
+      `http://localhost:3005/users/user/${user.sub}/update/`,
       {
         userId: user.sub,
 		username: newName 
