@@ -3,23 +3,19 @@ import UserComments from './UserComments';
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 
-
 const Profile = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const { loginWithRedirect } = useAuth0();
   const [userDetails, setUserDetails] = useState({});
   useEffect(() => {
     async function getUsers() {
-      let { data } = await axios.get(`http://loocalhost:3005/user/${user.sub}`
+      let { data } = await axios.get(`http://localhost:3005/user/${user.sub}`
       );
-      // console.log(data);
       if (data.ok) setUserDetails(data.details);
     }
     getUsers();
   }, []);
 
-
-  
   if (isLoading) {
     return <div>Loading ...</div>;
   }
@@ -33,7 +29,7 @@ const Profile = () => {
 		return alert("You did not enter any name!");
 	  }
     let { data } = await axios.post(
-      `http://loocalhost:3005//user/${user.sub}/update/`,
+      `http://localhost:3005//user/${user.sub}/update/`,
       {
         userId: user.sub,
 		username: newName 

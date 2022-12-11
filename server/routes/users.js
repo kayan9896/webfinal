@@ -6,7 +6,6 @@ const {
   addcmtodb,
   readcmdb,
   getoneuser,
-  registeruser,
   updateuser,
   getonecm,
   deletecmdb,
