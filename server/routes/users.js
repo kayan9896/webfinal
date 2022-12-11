@@ -88,7 +88,7 @@ router.delete("/comments/delete/:cId", async function (req, res) {
 });
 router.get("/comments/usercm/:usrId", async function (req, res) {
   try {
-    const dt = await getusercm(req.body.usrId);
+    const dt = await getusercm(req.params.usrId);
     console.log(dt);
     res.json(dt);
   } catch (e) {

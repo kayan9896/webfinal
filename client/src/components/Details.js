@@ -25,7 +25,7 @@ export default function Details() {
   const [onEditCommentId, setOnEditId] = useState(0);
   async function getComments() {
     let commentData = await axios.get(
-      `http://localhost:3005/comments/${sid}`
+      `http://localhost:3005/users/comments/${sid}`
     );
     // console.log(commentData.data)
     setCommentData(commentData.data);

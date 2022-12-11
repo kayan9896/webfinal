@@ -74,7 +74,7 @@ module.exports.getoneuser = async (n) => {
 	  const userdat = await c
 	  .db("game")
 	  .collection("cm")
-	  .updateOne({ userId }, { $set: {nickname: name} });
+	  .updateMany({ userId }, { $set: {nickname: name} });
 	} catch (e) {
 	  console.log(e);
 	}
