@@ -23,6 +23,9 @@ export default function UserInformation() {
 		if (newName.length === 0) {
 			return alert("You did not enter any name!");
 		  }
+		if (newName === userDetails.username){
+			return alert("You did not make any change!");
+		}
 		let { data } = await axios.post(
 		  `http://localhost:3005/users/user/${user.sub}/update`,
 		  {
@@ -33,6 +36,7 @@ export default function UserInformation() {
 		console.log(data);
 		if (data.ok) {
 		  alert("Your name been successfully updated!");
+		  window.location.reload()
 		} else alert("error");
 	  }
 

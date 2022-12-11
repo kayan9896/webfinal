@@ -38,12 +38,8 @@ router.post('/user/:userId/update', async function(req,res,next){
 	try {
 		const { userId, username } = req.body;
 		try {
-		  const insertResult = await updateuser({
-			userId,
-			username,
-		  });
-		  updateuser(req.body.userId, { nickname: req.body.username });
-		  res.status(201).send({ ok: insertResult.acknowledged });
+		  updateuser(req.body.userId, { username: req.body.username });
+		  res.send({ ok: true });
 		} catch (error) { console.error(error)}
 	  } catch (e) {
 		console.log(e);
