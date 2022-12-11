@@ -45,12 +45,12 @@ router.get('/user/:userId', async function(req,res,next){
 		console.log(e);
 	}
 });
-router.get('/user/new', async function(req,res,next){
+router.post('/user/new', async function(req,res,next){
 	try {
 		const { userId, username } = req.body;
 		try{
 			const dt = await registeruser(req.body.userId, req.body.username);
-			res.json(dt);
+			res.send({ ok: true });
 		}catch (e) {console.log(e);}
 	  }catch(e){console.log(e);}
 	});

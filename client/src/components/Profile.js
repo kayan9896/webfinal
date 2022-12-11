@@ -29,7 +29,7 @@ const Profile = () => {
 			if (!found) {
 				console.log("in");
 				let { data } = await axios.post(
-					`http://localhost:3005/users/user/new`,
+					"http://localhost:3005/users/user/new",
 					{
 						userId: user.sub,
 						username: user.nickname,
