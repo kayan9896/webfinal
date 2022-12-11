@@ -42,10 +42,9 @@ router.post('/user/:userId/update', async function(req,res,next){
 			userId,
 			username,
 		  });
-		  updatecmdb(req.params.cId, { nickname: req.body.username });
+		  updateuser(req.params.cId, { nickname: req.body.username });
 		  res.status(201).send({ ok: insertResult.acknowledged });
-		} catch (error) { }
-		// res.redirect("/");
+		} catch (error) { console.error(error)}
 	  } catch (e) {
 		console.log(e);
 	  }
@@ -72,7 +71,7 @@ router.delete("/comments/delete/:cId", async function (req, res) {
 });
 router.get("/comments/usercm/:usrId", async function (req, res) {
   try {
-    const dt = await getusercm(req.params.usrId);
+    const dt = await getusercm(req.body.usrId);
     console.log(dt);
     res.json(dt);
   } catch (e) {

@@ -44,8 +44,7 @@ module.exports.getoneuser = async (n) => {
 	  const dat = await c
 		.db("game")
 		.collection("user")
-		.findOne({ _id: mdb.ObjectId(n) });
-	  //console.log(mdb.ObjectId(n));
+		.findOne({ userId: n });
 	  return dat;
 	} catch (e) {
 	  console.log(e);

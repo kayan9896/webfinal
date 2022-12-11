@@ -2,19 +2,12 @@ import { useAuth0 } from "@auth0/auth0-react";
 import UserComments from './UserComments';
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import UserInformation from "./UserInformation";
 
 const Profile = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const { loginWithRedirect } = useAuth0();
-  const [userDetails, setUserDetails] = useState({});
-  useEffect(() => {
-    async function getUsers() {
-      let { data } = await axios.get(`http://localhost:3005/users/user/${user.sub}`
-      );
-      if (data.ok) setUserDetails(data.details);
-    }
-    getUsers();
-  }, []);
+
 
   if (isLoading) {
     return <div>Loading ...</div>;
@@ -23,33 +16,12 @@ const Profile = () => {
     loginWithRedirect()
   }
 
-  async function submitUpdateName() {
-	const newName = document.getElementById("myText").value;
-	if (newName.length === 0) {
-		return alert("You did not enter any name!");
-	  }
-    let { data } = await axios.post(
-      `http://localhost:3005/users/user/${user.sub}/update/`,
-      {
-        userId: user.sub,
-		username: newName 
-      }
-    );
-    if (data.ok) {
-      alert("Your name been successfully updated!");
-    } else alert("error");
-  }
-
   return (
     isAuthenticated && (
-      <div style={{padding:"5%"}}>
-        <img src={user.picture} alt={userDetails.username} />
-        <h2>{userDetails.username}</h2>
-        <p>{user.email}</p>
-
-
-		<input type="text" id="myText" defaultValue={userDetails.username} />
-		<button onClick={submitUpdateName}>Update Your Nickname</button>
+      <div>
+        <div>
+          <UserInformation />
+        </div>
 
         <div>
           <UserComments />
