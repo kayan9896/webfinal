@@ -5,6 +5,9 @@ const { uid } = require("uid");
 const {
   addcmtodb,
   readcmdb,
+  getoneuser,
+  registeruser,
+  updateuser,
   getonecm,
   deletecmdb,
   updatecmdb,
@@ -24,6 +27,29 @@ router.get("/listall", async function (req, res, next) {
     console.log(e);
   }
 });
+router.get('/user/:userId', async function(req,res,next){
+	try{
+		const dt = await getoneuser(req.params.userId);
+		res.json(dt);
+	}catch (e) {
+		console.log(e);
+	}
+});
+router.post('/user/:userId/update', async function(req,res,next){
+	try {
+		const { userId, username } = req.body;
+		try {
+		  const insertResult = await addcmtodb({
+			userId,
+			username,
+		  });
+		  res.status(201).send({ ok: insertResult.acknowledged });
+		} catch (error) { }
+		// res.redirect("/");
+	  } catch (e) {
+		console.log(e);
+	  }
+	});
 router.get("/comments/:gameId", async function (req, res, next) {
   try {
     // const dt = await getonecm(req.params.gameId);

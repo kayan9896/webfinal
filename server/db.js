@@ -39,6 +39,41 @@ module.exports.getone = async (n) => {
     console.log(e);
   }
 };
+module.exports.getoneuser = async (n) => {
+	try {
+	  const dat = await c
+		.db("game")
+		.collection("user")
+		.findOne({ _id: mdb.ObjectId(n) });
+	  //console.log(mdb.ObjectId(n));
+	  return dat;
+	} catch (e) {
+	  console.log(e);
+	}
+  };
+  module.exports.registeruser = async (n) => {
+	try {
+	  const dat = await c
+		.db("game")
+		.collection("user")
+		.findOne({ _id: mdb.ObjectId(n) });
+	if (dat.length === 0){
+		const add = await c.db("game").collection("user").insertOne(n);
+	}
+	} catch (e) {
+	  console.log(e);
+	}
+  };
+  module.exports.updateuser = async (id,change) => {
+	try {
+	  const dat = await c
+		.db("game")
+		.collection("user")
+		.updateMany({ _id: mdb.ObjectId(id)}, { $set: pair });
+	} catch (e) {
+	  console.log(e);
+	}
+  };
 module.exports.updatedb = async (gameId, pair) => {
   try {
     const dat = await c
