@@ -39,10 +39,11 @@ router.post('/user/:userId/update', async function(req,res,next){
 	try {
 		const { userId, username } = req.body;
 		try {
-		  const insertResult = await addcmtodb({
+		  const insertResult = await updateuser({
 			userId,
 			username,
 		  });
+		  updatecmdb(req.params.cId, { nickname: req.body.username });
 		  res.status(201).send({ ok: insertResult.acknowledged });
 		} catch (error) { }
 		// res.redirect("/");
