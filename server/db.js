@@ -50,15 +50,17 @@ module.exports.getoneuser = async (n) => {
 	  console.log(e);
 	}
   };
-  module.exports.registeruser = async (n) => {
+  module.exports.readuserdb = async () => {
 	try {
-	  const dat = await c
-		.db("game")
-		.collection("user")
-		.findOne({ _id: mdb.ObjectId(n) });
-	if (dat.length === 0){
-		const add = await c.db("game").collection("user").insertOne(n);
+	  const dat = await c.db("game").collection("user").find();
+	  return dat.toArray();
+	} catch (e) {
+	  console.log(e);
 	}
+  };
+  module.exports.registeruser = async (id, name) => {
+	try {
+		const add = await c.db("game").collection("user").insertOne({userId:id, username: name});
 	} catch (e) {
 	  console.log(e);
 	}

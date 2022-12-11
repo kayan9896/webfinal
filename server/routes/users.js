@@ -5,7 +5,9 @@ const { uid } = require("uid");
 const {
   addcmtodb,
   readcmdb,
+  readuserdb,
   getoneuser,
+  registeruser,
   updateuser,
   getonecm,
   deletecmdb,
@@ -26,6 +28,15 @@ router.get("/listall", async function (req, res, next) {
     console.log(e);
   }
 });
+router.get("/userlist", async function (req, res, next) {
+	try {
+	  const dt = await readuserdb();
+	  res.json(dt);
+	} catch (e) {
+	  console.log(e);
+	}
+  });
+
 router.get('/user/:userId', async function(req,res,next){
 	try{
 		const dt = await getoneuser(req.params.userId);
@@ -34,6 +45,16 @@ router.get('/user/:userId', async function(req,res,next){
 		console.log(e);
 	}
 });
+router.get('/user/new', async function(req,res,next){
+	try {
+		const { userId, username } = req.body;
+		try{
+			const dt = await registeruser(req.body.userId, req.body.username);
+			res.json(dt);
+		}catch (e) {console.log(e);}
+	  }catch(e){console.log(e);}
+	});
+
 router.post('/user/:userId/update', async function(req,res,next){
 	try {
 		const { userId, username } = req.body;

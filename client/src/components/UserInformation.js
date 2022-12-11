@@ -33,7 +33,7 @@ export default function UserInformation() {
 			username: newName 
 		  }
 		);
-		console.log(data);
+		console.log("in",data);
 		if (data.ok) {
 		  alert("Your name been successfully updated!");
 		  window.location.reload()
