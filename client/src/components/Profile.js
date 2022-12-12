@@ -19,7 +19,7 @@ const Profile = () => {
 
 	async function checkIfUserInDb() {
 		try {
-			let response = await fetch("http://localhost:3005/users/userlist")
+			let response = await fetch("https://kayan9896server.onrender.com/users/userlist")
 			const da = await response.json();
 
 			console.log(da);
@@ -29,7 +29,7 @@ const Profile = () => {
 			if (!found) {
 				console.log("in");
 				let { data } = await axios.post(
-					"http://localhost:3005/users/user/new",
+					"https://kayan9896server.onrender.com/users/user/new",
 					{
 						userId: user.sub,
 						username: user.nickname,

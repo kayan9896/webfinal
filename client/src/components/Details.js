@@ -25,7 +25,7 @@ export default function Details() {
   const [onEditCommentId, setOnEditId] = useState(0);
   async function getComments() {
     let commentData = await axios.get(
-      `http://localhost:3005/users/comments/${sid}`
+      `https://kayan9896server.onrender.com/users/comments/${sid}`
     );
     // console.log(commentData.data)
     setCommentData(commentData.data);
@@ -33,7 +33,7 @@ export default function Details() {
   useEffect(() => {
     async function getGameDetails() {
       let { data } = await axios.get(
-        `http://localhost:3005/game/${sid}`
+        `https://kayan9896server.onrender.com/game/${sid}`
       );
       // console.log(data);
       if (data.ok) setGameDetails(data.details);
@@ -49,7 +49,7 @@ export default function Details() {
     }
     SetSubmitButtonStatus(true);
     let { data } = await axios.post(
-      "http://localhost:3005/users/new",
+      "https://kayan9896server.onrender.com/users/new",
       {
         userId: user.sub,
         Comment: commentText,
@@ -69,7 +69,7 @@ export default function Details() {
   async function submitEditedComment() {
     SetSubmitEditButtonStatus(true);
     let { data } = await axios.post(
-      `http://localhost:3005/users/update/${onEditCommentId}`,
+      `https://kayan9896server.onrender.com/update/${onEditCommentId}`,
       {
         Comment: commentTextEdit,
         userId: user.sub,
@@ -90,7 +90,7 @@ export default function Details() {
     );
     if (confirmation) {
       let { data } = await axios.delete(
-        `http://localhost:3005/users/comments/delete/${cId}`
+        `https://kayan9896server.onrender.com/users/comments/delete/${cId}`
       );
 
       if (data.ok) {

@@ -10,7 +10,7 @@ export default function UserInformation() {
 	
 	useEffect(() => {
 		async function getUsers() {
-			let cmt = await fetch(`http://localhost:3005/users/user/${user.sub}`);
+			let cmt = await fetch(`https://kayan9896server.onrender.com/users/user/${user.sub}`);
 			const da = await cmt.json();
 			if (cmt.ok) setUserDetails(da);
 		}
@@ -27,7 +27,7 @@ export default function UserInformation() {
 			return alert("You did not make any change!");
 		}
 		let { data } = await axios.post(
-		  `http://localhost:3005/users/user/${user.sub}/update`,
+		  `https://kayan9896server.onrender.com/users/user/${user.sub}/update`,
 		  {
 			userId: user.sub,
 			username: newName 
