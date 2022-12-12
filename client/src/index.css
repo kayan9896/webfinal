@@ -192,6 +192,7 @@ embed {
 .column {
   float: left;
   width: 50%;
+  text-align: center;
 }
 
 .row:after {
