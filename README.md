@@ -37,8 +37,9 @@ Xiaoyang Zhao contributed to these functions. <br />
 <br />
 
 Meixuan Chen completed the log in and user profile, including the comments user made for the games and link direct them to the game. <br />
+New users will be registered to user database. And all users are allowed to change their username. After users change their username, their name in comments will also be updated. <br />
 <img width="546" alt="login" src="https://user-images.githubusercontent.com/90473306/205114260-e781c412-f021-4c71-8975-9c9e3771c472.png">
-<img width="468" alt="profile" src="https://user-images.githubusercontent.com/97938339/206839159-7a3d8732-7d2f-4b35-91fc-c98f16d9e107.PNG">
+<img width="468" alt="profile" src="https://user-images.githubusercontent.com/97938339/206953030-a737f8ff-4377-4a06-bbce-3fcfd7019d95.PNG">
 <br />
 
 And we also have a server part.<br />
