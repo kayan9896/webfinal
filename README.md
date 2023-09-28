@@ -47,7 +47,7 @@ New users will be registered to user database. And all users are allowed to chan
 <br />
 
 And we also have a server part.<br />
-Xiaoyang Zhao set up the server, implemented the CRUD functions for mongodb and connected the server with React. <br />
+Loris set up the server, implemented the CRUD functions for mongodb and connected the server with React. <br />
 <img width="307" alt="server" src="https://user-images.githubusercontent.com/90473306/205114805-7aac6b2a-5f7e-4a22-9684-73c67eceeb48.png">
 <img width="500" alt="listall" src="https://user-images.githubusercontent.com/90473306/205114880-342a09ce-39fa-469f-9669-1b4772ccbb77.png">
 <br />
@@ -57,5 +57,5 @@ Arghavan Ayoughi handled the data from steam api and user comments for the serve
 <br />
 
 Finally, we deployed the server and the client separately on render. <br />
-Xiaoyang Zhao is responsible for the deployment. <br />
+Loris is responsible for the deployment. <br />
 <img width="932" alt="deploy" src="https://user-images.githubusercontent.com/90473306/205115966-baeab604-afdb-41d1-b83d-a435d634f7a6.png">
